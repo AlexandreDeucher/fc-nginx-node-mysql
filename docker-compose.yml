@@ -1,0 +1,24 @@
+services:
+  app:
+    build:
+      context: ./node
+    container_name: node_app
+    tty: true
+    volumes:
+      - ./node:/usr/src/app
+    entrypoint: bash
+    networks:
+      - node_network
+
+  nginx:
+    build:
+      context: ./nginx
+    container_name: nginx
+    ports:
+      - "8080:80"
+    networks:
+      - node_network
+
+networks:
+  node_network:
+    driver: bridge
