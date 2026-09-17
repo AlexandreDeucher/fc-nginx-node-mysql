@@ -9,6 +9,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^5.2.1"
+    "@faker-js/faker": "^9.9.0",
+    "express": "^5.2.1",
+    "mysql": "^2.18.1"
   }
 }

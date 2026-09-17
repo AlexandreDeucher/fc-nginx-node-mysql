@@ -1,7 +1,14 @@
 FROM node:18
 
-WORKDIR /src/app
+WORKDIR /usr/src/app
+
+RUN npm install @faker-js/faker
+RUN npm install mysql
+
+ENV DOCKERIZE_VERSION v0.14.0
 
 COPY . .
 
 EXPOSE 3000
+
+CMD ["node","index.js"]
